@@ -32,7 +32,11 @@
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate-version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derbyclient</artifactId>
+            <version>10.12.1.1</version>
+        </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -67,8 +71,10 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>5.0.7</version>
                 <configuration>
-                    <driver>org.h2.Driver</driver>
-                    <url>jdbc:h2:file:${db-file}</url>
+                    <driver>org.apache.derby.jdbc.ClientDriver</driver>
+                    <url>jdbc:derby://172.17.0.4:5432/postgres</url>
+                    <user>postgres</user>
+                    <password>password1</password>
                     <locations>
                         <location>filesystem:${migrations-dir}</location>
                     </locations>
