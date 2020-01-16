@@ -72,7 +72,7 @@
                 <version>5.0.7</version>
                 <configuration>
                     <driver>org.apache.derby.jdbc.ClientDriver</driver>
-                    <url>jdbc:derby://172.17.0.4:5432/postgres</url>
+                    <url>jdbc:postgresql://172.17.0.4:5432/postgres</url>
                     <user>postgres</user>
                     <password>password1</password>
                     <locations>
